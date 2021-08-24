@@ -1,0 +1,44 @@
+.loading {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__item {
+        width: 20px;
+        height: 100px;
+        margin-right: 20px;
+        border-radius: 12px;
+        background-color: pink;
+        animation: loading 1s linear infinite;
+    }
+}
+
+@keyframes loading {
+    0% {
+        height: 100px;
+    }
+    20% {
+        height: 80px;
+    }
+    60% {
+        height: 40px;
+    }
+    80% {
+        height: 20px;
+    }
+}
+
+@for $i from 1 through 5 {
+    .loading__item:nth-child(#{$i}) {
+        animation-delay: #{$i * 0.2s};
+    }
+}
+
+.registration {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & > a {
+        color: black;
+    }
+}
