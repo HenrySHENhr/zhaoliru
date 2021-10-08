@@ -91,4 +91,86 @@
 .registration > a {
   color: black;
 }
+
+.main {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "header header" "sidebar container";
+  -ms-grid-columns: 200px auto;
+      grid-template-columns: 200px auto;
+  -ms-grid-rows: 100px auto;
+      grid-template-rows: 100px auto;
+  overflow: auto;
+  height: 95vh;
+  background-color: #f4f3f3;
+}
+
+.header {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: header;
+  background-color: #029ae1;
+  color: white;
+}
+
+.nav {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: sidebar;
+  background-color: #cd9c54;
+  color: white;
+}
+
+.container {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: container;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "profile profile" "chart calendar" "footer footer";
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr 100px;
+      grid-template-rows: 1fr 1fr 100px;
+  background-color: #f4f3f3;
+  overflow: auto;
+}
+
+.profile {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: profile;
+  background-color: white;
+  height: 1000px;
+  margin: 20px;
+}
+
+.chart {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: chart;
+  background-color: white;
+  height: 800px;
+  margin: 20px;
+}
+
+.calendar {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: calendar;
+  background-color: white;
+  height: 800px;
+  margin: 20px;
+}
+
+.footer {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: footer;
+  background-color: black;
+  color: white;
+}
 /*# sourceMappingURL=style.css.map */
