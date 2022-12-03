@@ -1,25 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+	<head>
+		<meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>zhaoliru</title>
+		<!-- <link rel="stylesheet" href="style.css"> -->
+        <style>
+			body { margin: 0; }
+		</style>
+	</head>
+	<body>
+        <!-- <div class="registration">
+            <a href="http://www.beian.miit.gov.cn">粤ICP备15096326号</a>
+        </div> -->
+		<script src="js/three.js"></script>
+		<script src="js/OrbitControls.js"></script>
+		<script src="js/GLTFLoader.js"></script>
+		<script>
+			const scene = new THREE.Scene();
+			const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+			camera.position.set(8, 3, 3);
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hanrui's Home</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+			const renderer = new THREE.WebGLRenderer();
+			renderer.setSize( window.innerWidth, window.innerHeight );
+			document.body.appendChild( renderer.domElement );
 
-<body>
-    <div class="loading">
-        <div class="loading__item"></div>
-        <div class="loading__item"></div>
-        <div class="loading__item"></div>
-        <div class="loading__item"></div>
-        <div class="loading__item"></div>
-    </div>
-    <div class="registration">
-        <a href="http://www.beian.miit.gov.cn">粤ICP备15096326号</a>
-    </div>
-</body>
+			new THREE.OrbitControls( camera, renderer.domElement );
+			const light = new THREE.HemisphereLight( 0xffffff, 0xcccccc, 1 );
+			scene.add( light );
 
+			function animate() {
+				requestAnimationFrame( animate );
+				renderer.render( scene, camera );
+			};
+
+			const loader = new THREE.GLTFLoader();
+			loader.load("model/model.glb", function(gltf) {
+				scene.add(gltf.scene);
+				animate();
+			})
+		</script>
+	</body>
 </html>
