@@ -55,6 +55,12 @@ body {
     color: #f1a3e1;
 }
 
+.base p {
+    margin-top: 10px;
+    font-weight: 100;
+    color: #f1a3e1;
+}
+
 #scratch {
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
